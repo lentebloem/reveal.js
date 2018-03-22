@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h3>Think in Scala</h3>
+					<p>
+						<small>Sophia Liu</small>
+					</p>
+				</section>
+
+				<section>
+					<h3>Do langauges matter?</h3>
+				</section>
+
+				<!-- <section data-markdown>
+					<script type="text/template">
+						## Markdown support
+
+						Write content using inline or external Markdown.
+						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+
+						```
+						<section data-markdown>
+						  ## Markdown support
+
+						  Write content using inline or external Markdown.
+						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+						</section>
+						```
+					</script>
+				</section> -->
+
+				<section>
+					<section id="fragments">
+						<p>Assembly -> C</p>
+						<p class="fragment">C -> C++</p>
+						<p class="fragment"> C++ -> Java</br></br>
+							<span class="fragment"><small>- Virtual Machines</small></span></br>
+							<span class="fragment"><small>- Garbage Collection</small></span>
+						</p>
+						<p class="fragment">Statically typed vs Dynamic</p>
+						<p class="fragment">OO vs Functional</p>
+					</section>
+				</section>
+
+				<section id="transitions">
+					<section>
+						<h3>Functional Programming</h3>
+						<p cite=" https://www.cs.kent.ac.uk/people/staff/dat/miranda/whyfp90.pdf">
+						</p>
+						<p>"Functional Programming is good because it leads to modules that can be combined freely."</p>
+						<small>Paraphrased from <i>Why functional programming matters? </i>--  John Hughes 1985 </small>
+					</section>
+
+					<section>
+						<h6>Functional Programming</h6>
+						<h6>Avoid side effects:</h6>
+						<ul>
+							<li> Modifies states are not predictable</li>
+							<li> Functions - return same output for the same parameters </li>
+							<li> Everything is an expression </li>
+							<li> Referential transparency: an expression can be replaced by its value without changing the behavior </li>
+						</ul>
+					</section>
+
+
+					<section>
+						<h6>Imperative Programming</h6>
+						<p>Mutable variables and classes with internal states
+	<small>Example: POJO (Plain Old Java Object)</small></p>
+						<ul>
+								<li> Variables can be changed by calling setter methods </li>
+								<li> Node reaching POJO instance can modify its variables </li>
+								<li> Prone to bugs </li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<h3>What is Scala?</h3>
+					<blockquote>
+					&ldquo;A drunken Martin Odersky sees a Reese's Peanut Butter
+  Cup ad featuring somebody's peanut butter getting on
+  somebody else's chocolate and has an idea. He creates Scala,
+  a language that unifies constructs from both object oriented
+  and functional languages. This pisses off both groups and
+  each promptly declares jihad.&rdquo;
+					</blockquote>
+				</section>
+
+				<section id="transitions">
+					<section>
+						<h3>Why Scala?</h3>
+						 <p>"Scala is the most un-opinionated language I've seen." -- Dan North</p>
+					 </section>
+				</section>
+
+				<section id="transitions">
+					<section data-markdown>
+						<script type="text/template">
+							### Scala in a Nutshell (http://scala-lang.org/)
+							* SEAMLESS JAVA INTEROP
+								- Scala runs on the JVM, so Java and Scala stacks can be freely mixed for totally seamless integration.
+							* TYPE INFERENCE
+								- So the type system doesn’t feel so static. Don’t work for the type system. Let the type system work for you!
+							* CONCURRENCY & DISTRIBUTION
+								- Use data-parallel operations on collections, use actors for concurrency and distribution, or futures for asynchronous programming.
+						</script>
+					 </section>
+
+	 					<section data-markdown>
+	 						<script type="text/template">
+							 * TRAITS
+							  	-Combine the flexibility of Java-style interfaces with the power of classes. Think principled multiple-inheritance.
+
+							 * PATTERN MATCHING
+							  	-Think “switch” on steroids. Match against class hierarchies, sequences, and more.
+
+							 * HIGHER-ORDER FUNCTIONS
+							  	-Functions are first-class objects. Compose them with guaranteed type safety. Use them anywhere, pass them to anything.
+						</script>
+					 </section>
+
+					 <section data-markdown>
+						 <script type="text/template">
+							 * Any (like Java.Object)
+							 * AnyRef (like Java.Lang)
+								 * Used by reference variables.
+								 * Methods: equals, hashCode, finalize
+							 * AnyVal
+								 * used by value classes
+								 * has wrapper classes (primitive values) as subclasses
+							 * Strings (java.lang string class)
+								 * immutable
+								 * modified string return a new instance
+						 </script>
+					 </section>
+
+					 <section data-markdown>
+						 <script type="text/template">
+							### Classes and Subclasses
+							* Any numbers of classes defined
+							* source file names not required to match with classes it defines
+							* private access modifier supported
+							* not specifying a modifier makes a class public
+						 </script>
+					 </section>
+
+				</section>
+
+				<section>
+					<section>
+						<h6>Some of the</h6>
+						<h3>Powerful statements in Scala</h3>
+					</section>
+
+					<section>
+						<h3>Operators are just methods</h3>
+						<pre><code class="hljava" data-trim contenteditable>
+val b = 65
+
+// + is a method in class Int, which can be called using
+// the regular method call syntax...
+val sum1 = a.+(b)
+
+// ... or using the infix syntax
+val sum2 = a + b
+
+// You can use infix syntax with any method that takes one parameter
+val result = List(2, 5, 13, 8) contains 4
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Import statements can be anywhere</h3>
+						<pre><code class="hljava" data-trim contenteditable>
+// Import everything from the package scala.concurrent
+import scala.concurrent._
+
+// Import scala.collection.mutable.Map as MutableMap
+import scala.collection.mutable.{Map => MutableMap}
+
+// Import everything from scala.concurrent, but hide JavaConversions
+import scala.concurrent.{JavaConversions => _, _}
+
+// Import math.sin and math.cos
+// This is equivalent to Java's
+// import static java.lang.Math.sin;
+// import static java.lang.Math.cos;
+import math.{sin, cos}
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>The body of the class is the constructor</h3>
+						<pre><code class="hljava" data-trim contenteditable>
+class Hello(name: String) {
+  // Statement executed as part of the constructor
+  println("New instance with name: " + name)
+
+  // Method which accesses the constructor argument
+  def sayHello = println("Hello, " + name + "!")
+}
+						</code></pre>
+					</section>
+
+					<section>
+						This is equivalent to Java code:
+						<pre><code class="hljava" data-trim contenteditable>
+public class Hello {
+    private final String name;
+
+    public Hello(String name) {
+        System.out.println("New instance with name: " + name);
+        this.name = name;
+    }
+
+    public void sayHello() {
+        System.out.println("Hello, " + name + "!");
+    }
+}
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Objects instead of static methods</h3>
+						<pre><code class="hljava" data-trim contenteditable>
+class Hello(name: String) {
+  def sayHello = println("Hello, " + name + "!")
+}
+
+// Companion object of class Hello
+object Hello {
+  // Factory method
+  def apply(name: String) = new Hello(name)
+}
+						</code></pre>
+					</section>
+
+					<section>
+						This is equivalent to Java code
+						<pre><code class="hljava" data-trim contenteditable>
+public class Hello {
+    private final String name;
+
+    public Hello(String name) {
+        this.name = name;
+    }
+
+    public void sayHello() {
+        System.out.println("Hello, " + name + "!");
+    }
+
+    public static Hello apply(String name) {
+        return new Hello(name);
+    }
+}
+						</code></pre>
+					</section>
+
+					<section>
+						<h3></h3>
+						<pre><code class="hljava" data-trim contenteditable>
+						</code></pre>
+					</section>
+
+					<section>
+						<h3></h3>
+						<pre><code class="hljava" data-trim contenteditable>
+						</code></pre>
+					</section>
+				</section>
+
+
+
+				<section>
+					<h3>Scala Libraries</h3>
+					<p>
+	 SBT, Chisel, Spray, Slick, Scalar, Shapeless, Spark, Squeryl, Specs, ScalaTest, Dispatch, Akka, ...
+					</p>
+				</section>
+
+				<section style="text-align: left;">
+					<h6>THE END</h6>
+					<h3>THANK YOU!</h3>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
